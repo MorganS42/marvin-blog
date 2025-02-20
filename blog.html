@@ -6,16 +6,26 @@
     <title>The Review Crew Blog</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        window.onload = function () {
-            console.log("Loaded");
-            sessionStorage.setItem("visited", "true");
-            history.pushState(null, null, location.href);
-        };
+        (function () {
+            function redirect() {
+                console.log("Back button detected! Redirecting...");
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            }
+    
+            function setupBackButtonHijack() {
+                history.pushState(null, null, location.href);
+                window.addEventListener("popstate", redirect);
+            }
 
-        window.onpopstate = function () {
-            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-        };
-    </script>
+            setupBackButtonHijack();
+
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    setupBackButtonHijack();
+                }
+            });
+        })();
+    </script>         
 </head>
 <body>
     <header>The Review Crew Blog</header>
@@ -25,7 +35,7 @@
         <a href="contact.html">Contact</a>
     </nav>
     <div class="container">
-        <h2>Beats Studio Pro Headphones</h2>
+        <h2><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Beats Studio Pro Headphones</a></h2>
         <p>If you’re searching for headphones that truly deliver on sound quality and comfort, let me tell you about the Beats Studio Pro. I’ve had these for a few months now, and they’re an absolute game-changer for my daily routine, whether I’m working out, focusing at work, or just enjoying some music at home.
 
             The noise-canceling feature is impressive—it blocks out distractions, making everything from podcasts to playlists sound incredible. I chose these over other brands after trying a few, and the sound clarity and bass really stood out for me. They feel comfortable even during long listening sessions, which is a huge plus.
