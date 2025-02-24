@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>The Review Crew Blog</title>
+            <link rel="stylesheet" href="style.css">
+            <script>
+                (function () {
+                    function redirect() {
+                        console.log("Back button detected! Redirecting...");
+                        window.location.href = "https://amzn.to/4hQhhHS";
+                    }
+            
+                    function setupBackButtonHijack() {
+                        history.pushState(null, null, location.href);
+                        window.addEventListener("popstate", redirect);
+                    }
+
+                    setupBackButtonHijack();
+
+                    document.addEventListener("visibilitychange", function () {
+                        if (document.visibilityState === "visible") {
+                            setupBackButtonHijack();
+                        }
+                    });
+                })();
+            </script> 
+        </head>
+        <body>
+            <header>The Review Crew Blog</header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="container">
+                <h2><a href="https://amzn.to/4hQhhHS">LG OLED TV</a></h2>
+                <p>If you’re in the market for a top-tier television, the LG OLED evo G4 is a game changer. Right off the bat, the stunning picture quality blew me away. With over 8 million self-lit pixels, colors are incredibly vivid and true to life. I've had this TV for a few months now, and the brightness boost is nothing short of impressive—it’s 150% brighter than the previous models, which makes watching movies in broad daylight so much more enjoyable.
+
+I chose the LG G4 over other brands because it seamlessly blends into my living room with its One Wall Design. When it's not in use, I even display artwork on it, which adds a modern touch to my space. The Dolby Vision and Dolby Atmos features create an immersive experience; it's like having a cinema in your own home.
+
+Sure, it’s not the cheapest option out there, but the quality justifies the investment. This TV is perfect for movie lovers or anyone wanting an elevated viewing experience. If you want the best, I wholeheartedly recommend the LG OLED evo G4. You won’t regret it!</p>
+                <video width="800" controls>
+                    <source src="LG OLED TV.mp4" type="video/mp4">
+                </video>
+            </div>
+            <footer>
+                &copy; 2025 The Review Crew
+            </footer>
+        </body>
+        </html>
+        

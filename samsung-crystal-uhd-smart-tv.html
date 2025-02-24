@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>The Review Crew Blog</title>
+            <link rel="stylesheet" href="style.css">
+            <script>
+                (function () {
+                    function redirect() {
+                        console.log("Back button detected! Redirecting...");
+                        window.location.href = "https://amzn.to/3Xbgd8S";
+                    }
+            
+                    function setupBackButtonHijack() {
+                        history.pushState(null, null, location.href);
+                        window.addEventListener("popstate", redirect);
+                    }
+
+                    setupBackButtonHijack();
+
+                    document.addEventListener("visibilitychange", function () {
+                        if (document.visibilityState === "visible") {
+                            setupBackButtonHijack();
+                        }
+                    });
+                })();
+            </script> 
+        </head>
+        <body>
+            <header>The Review Crew Blog</header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="container">
+                <h2><a href="https://amzn.to/3Xbgd8S">SAMSUNG Crystal UHD Smart TV</a></h2>
+                <p>If you’re in the market for a TV that truly enhances your viewing experience, let me tell you about the Samsung Crystal UHD Smart TV. I’ve had mine for a few months now, and I’m genuinely impressed with the picture quality. The PurColor technology really makes a difference—colors pop in such a vibrant way that it feels like I’m right there in the scene. 
+
+Watching movies in 4K makes everything clearer, and the Motion Xcelerator feature means I can binge-watch action-packed shows without any lag or blur. Plus, the Object Tracking Sound Lite adds this immersive feel—you can almost hear the chase happening around you!
+
+One small drawback? The remote can be a bit cluttered with options, which might be overwhelming at first. But honestly, that’s a minor issue compared to the stunning viewing experience you get.
+
+In summary, this TV is perfect for anyone who values picture and sound quality, especially families or movie buffs. I’d definitely recommend it over other budget options for its overall performance. Happy watching!</p>
+                <video width="800" controls>
+                    <source src="SAMSUNG Crystal UHD Smart TV.mp4" type="video/mp4">
+                </video>
+            </div>
+            <footer>
+                &copy; 2025 The Review Crew
+            </footer>
+        </body>
+        </html>
+        
